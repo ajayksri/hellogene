@@ -7,6 +7,11 @@ This project implements a simple web service and takes care of various aspect of
 # Tested Environment
 - CentOS 7.9
 
+# Implementation limitation
+- This is crude implementation.
+- There is no logging.
+- The web service is using json format, data objects are being transferred in json format. 
+
 # Building rpm
 - clone the code on the machine using command - git clone git@github.com:ajayksri/hellogene.git
 - go to the base directory of source code
