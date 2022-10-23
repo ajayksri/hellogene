@@ -48,3 +48,38 @@ def test_user_exist_random_name():
     name_returned = name_returned.split('!')[0]
 
     assert name_returned in given_names
+
+
+def test_user_exist_mix_version_v1v2():
+    # Add user
+    url = 'http://127.0.0.1:5000/app/hello/v1/user/vijay'
+    body = {'name': 'Vijay'}
+    response = requests.post(url, json=body)
+    assert response.status_code == 200
+
+    # get request
+    url = 'http://127.0.0.1:5000/app/hello/v2/user/vijay'
+    response = requests.get(url)
+    assert response.status_code == 200
+    assert response.json()['data'] == 'Hello Vijay!'
+
+
+def test_user_exist_mix_version_v2v1():
+    # Add user
+    url = 'http://127.0.0.1:5000/app/hello/v2/user/vijay'
+    body = {'name': 'Vijay'}
+    response = requests.post(url, json=body)
+    assert response.status_code == 200
+
+    # get request
+    url = 'http://127.0.0.1:5000/app/hello/v1/user/vijay'
+    response = requests.get(url)
+    assert response.status_code == 200
+    assert response.json()['data'] == 'Hello Vijay!'
+
+
+def test_user_not_exist_v2():
+    url = 'http://127.0.0.1:5000/app/hello/v2/user/sanjay'
+    response = requests.get(url)
+    assert response.status_code == 200
+    assert response.json()['data'] == 'Hello World!'

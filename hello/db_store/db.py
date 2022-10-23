@@ -148,7 +148,7 @@ class MongoDB(DB):
             updates = defaultdict(dict)
             for a_key in data:
                 if isinstance(data[a_key], list):
-                    updates['$push'][a_key] = data[a_key]
+                    updates['$push'][a_key] = data[a_key][0]
                 else:
                     updates['$set'][a_key] = data[a_key]
 
