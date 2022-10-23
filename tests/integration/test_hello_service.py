@@ -32,7 +32,7 @@ def test_user_not_exist():
 
 def test_user_exist_random_name():
     # Add user
-    url = 'http://127.0.0.1:5000/app/hello/v1/user/vijay'
+    url = 'http://127.0.0.1:5000/app/hello/v2/user/jay'
     given_names = ['Vijay', 'Sanjay', 'Dhanajay']
     for a_given_name in given_names:
         body = {'name': a_given_name}
