@@ -23,5 +23,5 @@ python3 conf/db_setup.py
 # Install requirements.txt
 pip3 install -r requirements.txt
 
-# Install Hello service rpm
-rpm -ivh dist/HelloService-0.1.0-1.noarch.rpm
+# Install Hello service rpm, should pick from version file
+rpm -ivh dist/HelloService-0.2.0-1.noarch.rpm

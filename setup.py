@@ -4,7 +4,8 @@ from setuptools import setup
 
 # Get the installation dir and version from command line
 install_dir = "/opt/helloservice/"
-version = "0.1.0"
+# Should pick from version file
+version = "0.2.0"
 
 for argument in sys.argv:
     if argument.startswith("--install-dir"):
