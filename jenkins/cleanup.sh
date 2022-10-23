@@ -5,7 +5,7 @@ kill -9 $pid
 rpm -e HelloService
 
 # Uninstall packages from requirements.txt
-pip3 uninstall -r requirements.txt
+pip3 uninstall -y -r jenkins/requirements.txt
 
 systemctl stop mongod
 yum remove -y mongodb-org
