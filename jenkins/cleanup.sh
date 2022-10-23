@@ -2,10 +2,10 @@
 pid=`ps -aef | grep app | grep python3 | awk '{print $2}'`
 kill -9 $pid
 
-rpm -ivh dist/HelloService-0.1.0-1.noarch.rpm
+rpm -e HelloService
 
 # Uninstall packages from requirements.txt
-pip3 install -r requirements.txt
+pip3 uninstall -r requirements.txt
 
 systemctl stop mongod
 yum remove -y mongodb-org
