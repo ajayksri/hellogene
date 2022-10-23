@@ -13,7 +13,7 @@ request_schema = {
 }
 
 
-@app.route('/app/hello/v1/user/<user_id>', methods=[HttpConsts.GET, HttpConsts.POST])
+@app.route("/app/hello/v1/user/<user_id>", methods=[HttpConsts.GET, HttpConsts.POST])
 @expects_json(request_schema, ignore_for=[HttpConsts.GET])
 def hello_world(user_id):
     if request.method == HttpConsts.GET:
