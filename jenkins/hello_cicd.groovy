@@ -14,7 +14,7 @@ pipeline {
                 cleanWs()
                 script { build_stage = env.STAGE_NAME }
                 dir('hellogene') {
-                    checkout([$class: 'GitSCM', branches: [[name: 'v03']], userRemoteConfigs: [[ url: "https://github.com/ajayksri/hellogene"]]])
+                    checkout([$class: 'GitSCM', branches: [[name: 'v0.3']], userRemoteConfigs: [[ url: "https://github.com/ajayksri/hellogene"]]])
                 }
             }
         }
