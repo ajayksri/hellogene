@@ -18,7 +18,7 @@ sleep 10
 mongostat -n 2
 
 # Install requirements.txt
-pip3 install -r requirements.txt
+pip3 install -r jenkins/requirements.txt
 
 # Install Hello service rpm, should pick from version file
 rpm -ivh dist/HelloService-0.2.0-1.noarch.rpm
