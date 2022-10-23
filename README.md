@@ -9,12 +9,13 @@ This project implements a simple web service and takes care of various aspect of
 
 # Implementation limitation
 - This is crude implementation.
-- There is no logging.
+- There is no logging, no error handling.
 - The web service is using json format, data objects are being transferred in json format. 
 
 # Building rpm
 - clone the code on the machine using command - git clone git@github.com:ajayksri/hellogene.git
 - go to the base directory of source code
+- Install dev tools by looking at jenkins/deploy.sh 
 - run command - sh build.sh
 - rpm will be available in dist directory
 
@@ -22,7 +23,7 @@ This project implements a simple web service and takes care of various aspect of
 - The process will build the code and deploy on the local machine
 - clone the code on the machine using command - git clone git@github.com:ajayksri/hellogene.git
 - go to the base directory of source code
-- run command - sh deploy.sh
+- run command - sh jenkins/deploy.sh
 
 # Run the app
 - from base directory of source code, run command - sh run.sh
