@@ -36,9 +36,9 @@ def handle_post_request(user_id):
 def handle_get_request(user_id):
     user_name = service_manager.get_user_name(user_id)
     if user_name:
-        return f'Hello {user_name}!'
+        return make_response(jsonify({"data": f"Hello {user_name}!"}), 200)
     else:
-        return 'Hello World!'
+        return make_response(jsonify({"data": f"Hello World!"}), 200)
 
 
 if __name__ == '__main__':
