@@ -14,7 +14,6 @@ yum -y update
 
 # Prepare build environment
 yum remove rpm-build -y
-yum remove git -y
 
 # for jenkins
 yum remove python3 -y
