@@ -14,25 +14,12 @@ pipeline {
                 cleanWs()
                 script { build_stage = env.STAGE_NAME }
                 dir('hellogene') {
-                    checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[ url: "https://github.com/ajayksri/hellogene"]]])
+                    checkout([$class: 'GitSCM', branches: [[name: 'v0.2']], userRemoteConfigs: [[ url: "https://github.com/ajayksri/hellogene"]]])
                 }
             }
         }
 
-        stage('Build') {
-            steps {
-                script { build_stage = env.STAGE_NAME }
-                sh label: 'Build', script: '''
-                pushd hellogene
-                    chmod +x *.sh
-                    chmod +x jenkins/*.sh
-                    ./build.sh
-                popd
-                '''
-            }
-        }
-
-        stage('Deploy') {
+        stage('Build_Deploy') {
             steps {
                 script { build_stage = env.STAGE_NAME }
                 sh label: 'Deploy', script: '''
