@@ -17,11 +17,11 @@ systemctl start mongod
 sleep 10
 mongostat -n 2
 
-# Setup DB
-python3 conf/db_setup.py
-
 # Install requirements.txt
 pip3 install -r requirements.txt
+
+# Setup DB
+python3 conf/db_setup.py
 
 # Install Hello service rpm, should pick from version file
 rpm -ivh dist/HelloService-0.2.0-1.noarch.rpm
