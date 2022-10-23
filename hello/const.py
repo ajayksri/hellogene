@@ -11,6 +11,7 @@ class ResponseConsts:
 class UsersConsts:
     USER_ID = 'user_id'
     NAME = 'name'
+    GIVEN_NAMES = 'given_names'
 
 
 class HttpConsts:

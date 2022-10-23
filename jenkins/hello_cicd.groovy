@@ -43,16 +43,5 @@ pipeline {
                 '''
             }
         }
-
-        stage('Cleanup') {
-            steps {
-                script { build_stage = env.STAGE_NAME }
-                sh label: 'Build', script: '''
-                pushd hellogene
-                    ./jenkins/cleanup.sh
-                popd
-                '''
-            }
-        }
     }
 }
