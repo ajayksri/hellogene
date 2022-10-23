@@ -28,7 +28,7 @@ def get_data_files() -> list:
 
 
 def get_packages() -> list:
-    ignore_list = ['test', '__pycache__']
+    ignore_list = ['tests', 'docs', '__pycache__']
     packages = ['hello']
     package_root = 'hello'
     for root, directories, _ in os.walk(package_root):
@@ -47,7 +47,7 @@ setup(name='HelloService',
       license='',
       author='Ajay Srivastava',
       author_email='ajay.ksri@gmail.com',
-      description='Technology show case',
+      description='Technology showcase',
       package_dir={'hello': 'hello'},
       packages=get_packages(),
       package_data={
