@@ -24,6 +24,8 @@ pipeline {
                 script { build_stage = env.STAGE_NAME }
                 sh label: 'Deploy', script: '''
                 pushd hellogene
+                    chmod +x *.sh
+                    chmod +x jenkins/*.sh
                     ./jenkins/deploy.sh
 		            ./run.sh
                 popd
