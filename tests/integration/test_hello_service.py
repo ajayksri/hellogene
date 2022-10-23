@@ -27,4 +27,4 @@ def test_user_not_exist():
     url = 'http://127.0.0.1:5000/app/hello/v1/user/sanjay'
     response = requests.get(url)
     assert response.status_code == 200
-    assert response.json()['data'] == 'Hello orld!'
+    assert response.json()['data'] == 'Hello World!'
